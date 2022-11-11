@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Polytechnique Montréal
+-- Engineer: Mehdi Benouhoud, Vincent Drolet
 -- 
 -- Create Date: 11/04/2022 04:51:50 PM
--- Design Name: 
+-- Design Name: TP04 circuit
 -- Module Name: tp04 - Behavioral
--- Project Name: 
+-- Project Name: TP04 - INF1500
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 

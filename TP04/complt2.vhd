@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Polytechnique Montréal
+-- Engineer: Mehdi Benouhoud, Vincent Drolet
 -- 
 -- Create Date: 11/04/2022 03:11:13 PM
--- Design Name: 
+-- Design Name: 5 bits standard binary to 2nd complement converter
 -- Module Name: complt2 - Behavioral
--- Project Name: 
+-- Project Name: TP04 - INF1500
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 

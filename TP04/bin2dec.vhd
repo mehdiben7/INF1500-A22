@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Polytechnique Montréal
+-- Engineer: Mehdi Benouhoud, Vincent Drolet
 -- 
 -- Create Date: 11/04/2022 04:14:08 PM
--- Design Name: 
+-- Design Name: 4 bits binary to decimal converter
 -- Module Name: bin2Dec - Behavioral
--- Project Name: 
+-- Project Name: TP04 - INF1500
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 

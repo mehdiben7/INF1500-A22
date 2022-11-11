@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Polytechnique Montréal
+-- Engineer: Mehdi Benouhoud, Vincent Drolet
 -- 
 -- Create Date: 11/04/2022 04:41:22 PM
--- Design Name: 
+-- Design Name: 4 bits binary to 7 segments display [0,9]
 -- Module Name: bin7Seg - Behavioral
--- Project Name: 
+-- Project Name: TP04 - INF1500
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 

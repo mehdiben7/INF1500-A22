@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Polytechnique Montréal 
+-- Engineer: Mehdi Benouhoud, Vincent Drolet
 -- 
 -- Create Date: 11/04/2022 04:32:47 PM
--- Design Name: 
+-- Design Name: 2 to 1 4 bits multiplexer
 -- Module Name: mux21_4b - Behavioral
--- Project Name: 
+-- Project Name: TP04 - INF1500
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 

@@ -1,9 +1,9 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Polytechnique Montréal
+-- Engineer: Jean-Baptiste Lefoul
 -- 
 -- Create Date: 29.10.2022 12:42:43
--- Design Name: 
+-- Design Name: 7 segments display display manager
 -- Module Name: gestAffichage - Behavioral
 -- Project Name: 
 -- Target Devices: 
@@ -16,6 +16,7 @@
 -- Revision 0.01 - File Created
 -- Additional Comments:
 -- 
+-- LICENSE: ALL RIGHTS RESERVED, NOT OPEN SOURCE
 ----------------------------------------------------------------------------------
 
 
