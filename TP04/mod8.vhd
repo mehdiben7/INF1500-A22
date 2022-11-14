@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -40,10 +41,6 @@ architecture Behavioral of mod8 is
 
 begin
 
-S(4) <= '0';
-S(3) <= '0';
-S(2) <= E(2);
-S(1) <= E(1);
-S(0) <= E(0);
+S <= STD_LOGIC_VECTOR(TO_UNSIGNED(TO_INTEGER(UNSIGNED(E )) mod 8, S'length));
 
 end Behavioral;
