@@ -16,7 +16,7 @@
 -- Revision 0.01 - File Created
 -- Additional Comments:
 -- 
--- LICENSE: ALL RIGHTS RESERVED, NOT OPEN SOURCE
+-- 
 ----------------------------------------------------------------------------------
 
 
