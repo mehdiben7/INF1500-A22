@@ -39,27 +39,35 @@ entity PulseGen is
 end PulseGen;
 
 architecture Behavioral of PulseGen is
-    type STATE_TYPE is (state_0, state_1);
-    signal state: STATE_TYPE;
+    type STATE_TYPE is (state_0, state_1); -- Les deux états de notre machine, soit la sortie est à 0, soit elle est à 1
+    signal state: STATE_TYPE; -- Signal conservant l'état de la sortie en mémoire
 
 begin
 
 process(CLK)
 begin
     if rising_edge(CLK) then -- Le circuit est synchrone, il ne vaut que si il y a un front montant
+
+        if RST = '1' then -- À tout moment, si le reset est activé
+            Vout <= '0'; -- La sortie est assignée à 0
+            state <= state_0; -- L'état revient donc à 0
+        end if;
+
         case state is 
+
             when state_0 => -- Lorsque la sortie est à 0
                 if Vin = '1' then -- Si le bouton est actif (est à 1),
                     Vout <= '1'; -- On assigne 1 à la sortie
                     state <= state_1; -- L'état est désormais à 1
                 end if;
+
             when state_1 =>
                 if Vin = '1' then -- Si le bouton est actif (est a 1),
                     Vout <= '0'; -- On assigne 0 à la sortie, puisque la sortie ne sera activée que pour un cycle
-                    state <= state_1; -- L'état reste donc à 1
                 else
                     state <= state_0; -- Sinon, l'état passe à 0
                 end if;
+
         end case;
     end if;
 end process;
