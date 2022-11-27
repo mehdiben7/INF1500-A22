@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Polytechnique Montréal
+-- Engineer: Mehdi Benouhoud, Vincent Drolet
 -- 
 -- Create Date: 11/18/2022 02:41:08 PM
--- Design Name: 
+-- Design Name: Pulse Generator
 -- Module Name: PulseGen - Behavioral
--- Project Name: 
+-- Project Name: TP05 - INF1500
 -- Target Devices: 
 -- Tool Versions: 
 -- Description: 
@@ -40,40 +40,27 @@ end PulseGen;
 
 architecture Behavioral of PulseGen is
     type STATE_TYPE is (state_0, state_1);
-    signal state, next_state : STATE_TYPE;
+    signal state: STATE_TYPE;
 
 begin
 
--- Partie séquentielle - Implémentation registre
-    process(CLK, RST)
-    begin
-    
-        if(CLK='1' and CLK'event) then
-            if(RST='1') then 
-                state <= state_0;
-            else
-                state <= next_state;
-            end if;
-        end if;
-    end process;
--- FIN - Partie séquentielle - Implémentation registre
-
--- Partie combinatoire - Implémentation de Moore
-    process(state, next_state, Vin)
-    begin
-        case state is
-            when state_0 =>
-                Vout <= '0';
-                if Vin = '1' then
-                
-                    next_state <= state_1;
+process(CLK)
+begin
+    if rising_edge(CLK) then -- Le circuit est synchrone, il ne vaut que si il y a un front montant
+        case state is 
+            when state_0 => -- Lorsque la sortie est à 0
+                if Vin = '1' then -- Si le bouton est actif (est à 1),
+                    Vout <= '1'; -- On assigne 1 à la sortie
+                    state <= state_1; -- L'état est désormais à 1
                 end if;
             when state_1 =>
-                Vout <= '1';
-                next_state <= state_0;   
-                
+                if Vin = '1' then -- Si le bouton est actif (est a 1),
+                    Vout <= '0'; -- On assigne 0 à la sortie, puisque la sortie ne sera activée que pour un cycle
+                    state <= state_1; -- L'état reste donc à 1
+                else
+                    state <= state_0; -- Sinon, l'état passe à 0
+                end if;
         end case;
-    end process;
--- FIN - Partie combinatoire - Implémentation de Moore
-
-end Behavioral;
+    end if;
+end process;
+end architecture;
