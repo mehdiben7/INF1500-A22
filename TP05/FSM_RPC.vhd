@@ -57,29 +57,30 @@ architecture Behavioral of FSM_RPC is
     
 begin
 
--- Partie séquentielle - Implémentation registre
     process(CLK, RST)
     begin
-        if(CLK='1' and CLK'event) then
-            -- For each clock rising edge
-            if(RST='1') then -- If Reset -> go back to initial state
-                            -- Falls inside even if another button is pressed
-                STATE <= IDLE;
-                NEXT_STATE <= PLAYER1;
-            elsif(V='1') then -- If V is pressed, go to next state
-                if(STATE=RESULT) then
-                    STATE <= IDLE; -- If already at result, go back to initial state
-                    NEXT_STATE <= PLAYER1; -- New "next state" is Player 1
-                else
-                    STATE <= NEXT_STATE; -- Otherwise go to next state
+            if rising_edge(CLK) then
+                if RST = '1' then
+                    STATE <= IDLE;
+                    -- NEXT_STATE <= PLAYER1;
+                else 
+                    if (V = '1') then
+                        case STATE is
+                            when IDLE =>
+                                STATE <= PLAYER1;
+                            when PLAYER1 =>
+                                STATE <= PLAYER2;
+                            when PLAYER2 =>
+                                STATE <= RESULT;
+                            when RESULT =>
+                                STATE <= IDLE;
+                        end case; 
+                        -- STATE <= NEXT_STATE;
+                    end if;
                 end if;
-                
             end if;
-        end if;
+        
         
     end process;
--- FIN - Partie séquentielle - Implémentation registre
-
-
 
 end Behavioral;
